@@ -1,0 +1,27 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname world-design) (read-case-sensitive #t) (teachpacks ((lib "image.rkt" "teachpack" "2htdp") (lib "universe.rkt" "teachpack" "2htdp"))) (htdp-settings #(#t constructor repeating-decimal #f #t none #f ((lib "image.rkt" "teachpack" "2htdp") (lib "universe.rkt" "teachpack" "2htdp")) #f)))
+;; physical constants
+
+; width of the world
+(define WIDTH-OF-WORLD 200)
+
+; radius of car's wheels
+(define WHEEL-RADIUS 5)
+
+; distance between the wheels
+(define WHEEL-DISTANCE (* WHEEL-RADIUS 5))
+
+;; graphical constants
+
+; graphic of wheels
+(define WHEEL
+  (circle WHEEL-RADIUS "solid" "gray"))
+
+; graphic of space between the wheels
+(define SPACE
+  (rectangle WHEEL-DISTANCE WHEEL-RADIUS "solid" "white"))
+
+; graphic of both wheels plus space in-between
+(define BOTH-WHEELS
+  (beside WHEEL SPACE WHEEL))
